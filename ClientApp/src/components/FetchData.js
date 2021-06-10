@@ -13,12 +13,12 @@ export class FetchData extends Component {
   }
   static keys = ["Name", "WMI", "Country", "CreatedOn", "VehicleType"];
 
-  static getRowsJsx = (data) => {
-    return data.map((d) => {
+  static getRowsJsx = () => {
+    return this.data.map((d) => {
       const wmi = d.WMI;
       return (
         <tr key={wmi}>
-          {keys.map((k) => (
+          {this.keys.map((k) => (
             <td key={`${wmi}-${k}`}>{d[k]}</td>
           ))}
         </tr>
@@ -32,16 +32,16 @@ export class FetchData extends Component {
   static renderDataTable(forecasts) {
     return (
       <div className="App">
-        <header>WMI Data - Honda | Total: {data.length}</header>
+        <header>WMI Data - Honda | Total: {this.data.length}</header>
         <table>
           <thead>
             <tr>
-              {keys.map((k) => (
+              {this.keys.map((k) => (
                 <th key={k}>{k}</th>
               ))}
             </tr>
           </thead>
-          <tbody>{getRowsJsx()}</tbody>
+          <tbody>{this.getRowsJsx()}</tbody>
         </table>
       </div>
     );

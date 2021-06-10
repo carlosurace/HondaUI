@@ -39,7 +39,7 @@ export class HondaData extends Component {
         <header>WMI Data - Honda | Total: {Vehicles.length}</header>
         <table>
           <thead>
-          <tr
+          <tr>
               <th colSpan="5">
                 <div className="ui fluid search">
                   <div className="ui icon input">
